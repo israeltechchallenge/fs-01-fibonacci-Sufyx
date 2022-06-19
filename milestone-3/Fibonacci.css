@@ -1,0 +1,75 @@
+/* 
+ * ITC Full-Stack Bootcamp
+ * Fibonacci assignment
+ * 19/06/2022
+ * Asaf Gilboa
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+
+#mainContainer {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainContent {
+    display: flex;
+    align-items: center;
+}
+
+#mainContent>div, #mainContent>input {
+    margin-right:1vw;
+}
+
+#header {
+    font-size: 3.5vw;
+    margin-bottom: 4vh;
+}
+
+#preText {
+    font-size: 4vh;
+}
+
+#inputX {
+    width: 9%;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+#getY {
+    background: #0275D8;
+    border: 1px solid #0275D8;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    font-size: 1vw;
+    aspect-ratio: 1 / 1;
+    padding: 0.5%;
+}
+
+#result {
+    width: 15%;
+}
+
+#inputX, #getY, #result {
+    height: 4vh;
+}
+
+#message {
+    margin-top: 4vh;
+    color: red;
+    font-size: 1.5vw;
+}
