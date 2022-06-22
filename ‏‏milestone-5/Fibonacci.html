@@ -1,0 +1,61 @@
+<!-- 
+ * ITC Full-Stack Bootcamp
+ * Fibonacci assignment
+ * 19/06/2022
+ * Asaf Gilboa
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="Fibonacci.css">
+
+    <title>Fibonacci</title>
+</head>
+
+<body class="d-flex flex-column">
+
+    <div id="mainContainer">
+
+        <h2 class="display-1 mx-5 my-3">Fibonacci Calculator</h2>
+
+        <div class="d-flex flex-row mx-5 my-3 align-items-center">
+
+            <div class="fs-4 p-1">The Fibonacci Of</div>
+
+            <div class="p-1">
+                <input id="inputX" type="number" size="1" class="form-control" placeholder="#" />
+            </div>
+
+            <div class="p-1">
+                <button id="getY" type="submit" class="btn btn-primary">is</button>
+            </div>
+
+            <div class="fs-4 p-1">
+                <div class="spinner-border d-none" id="loader"></div>
+                <span id="result"></span>
+            </div>
+
+        </div>
+        <code id="message" class="offset-3 py-2"></code>
+
+
+    </div>
+
+
+    <script src="Fibonacci.js"></script>
+</body>
+
+</html>
