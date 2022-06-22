@@ -16,7 +16,7 @@ async function fiboServerCall(num) {
   let fiboServer = "http://localhost:5050/fibonacci/";
   fiboServer += num;
   fiboFetch(fiboServer).then(data => {
-    document.getElementById("result").innerHTML = (`<u><b>${data}</b></u>`);
+    document.getElementById("result").innerHTML = (data);
   });
 }
 
