@@ -5,31 +5,12 @@
  * Asaf Gilboa
 */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 html, body {
     height: 100%;
     font-family: 'Open Sans';
     color: #373A3C;
     font-weight: 400;
-    font-size: 1.8vw;
 }
-#loader {
-    display: none;
+#message {
+    background-color: rgb(234, 199, 199);
 }
-#inputX {
-    width: 15%;
-}
-
-/* #mainContent {
-    display: flex;
-    align-items: center;
-}
-#mainContent>input, #mainContent button, #result {
-    margin-left: 1.5vw;
-    height: 7vh;
-} */
