@@ -13,52 +13,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="Fibonacci.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
     <title>Fibonacci</title>
 </head>
 
-<body>
+    
+<body class="d-flex flex-column">
+    
+    <div id="mainContainer">
 
-    <div id="mainContainer" class="container-fluid">
+        <h1 class="display-1 m-5">Fibonacci Calculator</h1>
 
-        
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-auto">
-                <h1 id="header">Fibonacci Calculator</h1>
+        <div class="d-flex flex-row m-5 align-items-center">
+
+            <div class="fs-4 p-1">The Fibonacci Of</div>
+
+            <div class="p-1">
+                <input id="inputX" type="number" size="1" class="form-control" placeholder="#" />
             </div>
-        </div>
 
-        <div id="mainContent" class="row no-gutters align-items-center">
-            <div class="col-sm-1"></div>
-
-            <div id="preText" class="col-sm-auto m-2">The Fibonacci Of</div>
-            <input type="number" name="inputX" class="col-sm-auto pl-4 w-5 rounded" id="inputX" placeholder="#">
-            <div class="col-sm-auto m-2">
-                <button type="button" class="btn btn-primary col-sm-auto m-2" id="getY">Is</button>
+            <div class="p-1">
+                <button id="getY" type="submit" class="btn btn-primary">is</button>
             </div>
-            <div id="result" class="serverResult col-sm-auto"></div>
+
+            <div class="fs-4 p-1">
+                <u><b><span id="result"></span></b></u>
+            </div>
+
         </div>
 
     </div>

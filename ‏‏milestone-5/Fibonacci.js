@@ -12,7 +12,6 @@ async function fiboFetch(fiboServer) {
   if (!response.ok) {
     const err = await response.text();
     throw Error(err);
-    // return err;
   }
   const fibo = await response.json();
   return fibo.result;
@@ -29,7 +28,7 @@ async function fiboServerCall(num) {
 
     res.classList.add("fs-4");
     res.classList.remove("text-danger");
-    res.innerHTML = (`<u><b>${data}</b></u>`);
+    res.innerHTML = (`<u><b class="fs-4">${data}</b></u>`);
     
   }).catch(error => {
     res.style.display = "initial";
@@ -37,7 +36,7 @@ async function fiboServerCall(num) {
     console.log(error);
     res.classList.remove("fs-4");
     res.classList.add("text-danger");
-    res.innerHTML = (`Server Error: ${error}`);
+    res.innerHTML = (`Server ${error}`);
   });
 }
 
