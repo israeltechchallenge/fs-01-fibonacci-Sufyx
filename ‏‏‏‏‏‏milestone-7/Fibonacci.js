@@ -7,6 +7,7 @@
 
 
 const SERVER_URL = "http://localhost:5050/fibonacci/";
+
 resultHistory();
 
 
@@ -28,8 +29,8 @@ async function fiboServerCall(num) {
     displayResult(true);
     res.classList.add("text-danger");
     res.classList.remove("fs-4");
-    console.log(error);
     res.innerHTML = (`Server ${error}`);
+    console.log(error);
   });
 }
 async function fiboFetch(fiboServer) {
@@ -62,12 +63,12 @@ document.getElementById("getY").addEventListener("click", function (e) {
     if (document.getElementById("saveCalcCheck").checked) {
       fiboServerCall(x);
     } else {
-      document.getElementById("loader1").classList.add("text-primary");
+      document.getElementById("loader1").classList.add("spinner-grow", "text-secondary");
       setTimeout(function () {
-        document.getElementById("loader1").classList.remove("text-primary");
+        document.getElementById("loader1").classList.remove("spinner-grow", "text-secondary");
         res.innerHTML = (`<u><b class="fs-4">${localFiboSolve(x)}</b></u>`);
         displayResult(true);
-      }, "1000")
+      }, "400")
     }
   }
 
@@ -75,8 +76,9 @@ document.getElementById("getY").addEventListener("click", function (e) {
 
 
 /**
- * A function to retrieve and display the history of Fibonacci calculations
- * done by the server.
+ * A function to retrieve and display the history
+ *  of Fibonacci calculations done by the server.
+ * @param {Number} selectVal - Value of selected element from dropdown
  */
 async function resultHistory(selectVal) {
 
@@ -86,13 +88,12 @@ async function resultHistory(selectVal) {
   const response = await fetch("http://localhost:5050/getFibonacciResults");
   const allResults = await response.json();
 
-  // let selectVal = document.getElementById("sortBy").value;
   let sortOrder = "Desc";
   let sortValue = "createdDate";
-  if ((selectVal == 1) || (selectVal == 2)) {
+  if ((selectVal === 'NumberAsc') || (selectVal === 'NumberDesc')) {
     sortValue = "number";
   }
-  if ((selectVal == 1) || (selectVal == 3)) {
+  if ((selectVal === 'DateAsc') || (selectVal === 'NumberAsc')) {
     sortOrder = "Asc";
   }
   let resultArray = [...sortResults(allResults.results, sortValue, sortOrder)];
@@ -111,12 +112,12 @@ async function resultHistory(selectVal) {
   }
 
   document.getElementById("loader2").classList.add("d-none");
-
 }
 
 
 /**
- * Returns the fibonacci number at x.
+ * Returns the fibonacci value at x.
+ * (Fn at Fx)
  * Uses a "tail recursion".
  */
 function localFiboSolve(x, a = 0, b = 1) {
@@ -131,17 +132,17 @@ function localFiboSolve(x, a = 0, b = 1) {
 
 
 /**
- * Receives an Objects array representing the Fibonnaci calculations history,
+ * Receives an Objects array representing the Fibonacci calculations history,
  * as well as arguments for the criteria and order to sort by.
- * @param {Array [Object]} resultsArray 
- * @param {String} sortVal 
- * @param {String} sortOrder 
- * @returns An array sorted according to parameters specified by arguments
+ * @param {Array [Object]} resultsArray - the array to be sorted
+ * @param {String} sortVal - the value to sort by (date / number)
+ * @param {String} sortOrder - the order to sort by (Ascending / Descending)
+ * @returns the sorted array
  */
 function sortResults(resultsArray, sortVal, sortOrder) {
   let sortedArray = [...resultsArray];
 
-  sortedArray.sort(function (a, b) {
+  sortedArray.sort((a, b) => {
     let sorter = 1;
     if (sortOrder === "Asc") {
       sorter = (sorter * -1);
@@ -160,6 +161,11 @@ function sortResults(resultsArray, sortVal, sortOrder) {
 }
 
 
+/**
+ * Hides or shows the loader and the calculation result
+ * "Moisturizer function" (prevents DRY code)
+ * @param {Boolean} show - Show or hide the result
+ */
 function displayResult(show) {
   document.getElementById("result").classList.remove("text-danger");
   if (show) {
@@ -169,20 +175,7 @@ function displayResult(show) {
     document.getElementById("loader1").classList.remove("d-none");
     document.getElementById("result").style.display = "none";
   }
-  
 }
-
-
-// Event listener for changes in the select element (sort-by)
-// document.getElementById("sortBy").addEventListener("change", resultHistory);
-
-// function sortSelect(sortVal) {
-//   sortOptions.forEach(option => {
-//     option.addEventListener('click', (e) => {
-//       console.log(`option: ${option.value} | e: ${e.target.nodeName}`);
-//     });
-//   });
-// }
 
 
 // Event listener for changes in the input element
