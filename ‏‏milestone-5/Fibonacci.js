@@ -28,7 +28,11 @@ async function fiboServerCall(num) {
 
     res.classList.add("fs-4");
     res.classList.remove("text-danger");
+
     res.innerHTML = (`<u><b class="fs-4">${data}</b></u>`);
+=======
+    res.innerHTML = (`<u><b>${data}</b></u>`);
+
     
   }).catch(error => {
     res.style.display = "initial";
@@ -36,7 +40,11 @@ async function fiboServerCall(num) {
     console.log(error);
     res.classList.remove("fs-4");
     res.classList.add("text-danger");
+
     res.innerHTML = (`Server ${error}`);
+=======
+    res.innerHTML = (`Server Error: ${error}`);
+
   });
 }
 
