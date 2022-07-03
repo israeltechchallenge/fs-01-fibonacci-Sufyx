@@ -1,0 +1,106 @@
+<!-- 
+ * ITC Full-Stack Bootcamp
+ * Fibonacci assignment
+ * 19/06/2022
+ * Asaf Gilboa
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="Fibonacci.css">
+
+    <title>Fibonacci</title>
+</head>
+
+<body class="d-flex flex-column">
+
+    <div id="mainContainer">
+
+        <h3 class="display-4 mx-5 my-3">Fibonacci Calculator</h3>
+
+        <div class="d-flex flex-row mx-5 mt-2 mb-0 align-items-center">
+
+            <div class="fs-4 p-1">The Fibonacci Of</div>
+
+            <div class="p-1">
+                <input id="inputX" type="number" size="1" class="form-control" placeholder="#" />
+            </div>
+
+            <div class="p-1">
+                <button id="getY" type="submit" class="btn btn-primary">is</button>
+            </div>
+
+            <div class="fs-5 p-1 mx-2">
+                <div class="spinner-border d-none" id="loader1"></div>
+                <span id="result" class="fs-6"></span>
+            </div>
+
+        </div>
+
+        <div class="d-flex form-check mx-5 mt-1 position-relative">
+            <input class="form-check-input" type="checkbox" value="" id="saveCalcCheck" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+                &nbsp; Save Calculation
+            </label>
+            <div class="col-1"></div>
+            <span id="message" class="offset-1 rounded ml-3 p-2 d-none"></span>
+        </div>
+
+
+    </div>
+
+
+    <div class="d-flex flex-row align-items-center mt-3 mb-2">
+        <h4 class="display-5 ms-5 ">Results</h4>
+
+        <div class="spinner-border d-none mx-2" id="loader2"></div>
+    </div>
+
+    <!-- <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div> -->
+
+
+    <div class="dropdown" id="sortBy">
+        <button class="btn dropdown-toggle mx-5 border-1" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown">
+            Sort By &nbsp;
+        </button>
+        <ul class="dropdown-menu" id="sortMenu">
+            <li><a class="dropdown-item sortOption" onclick="resultHistory('NumberAsc')">Number Asc</a></li>
+            <li><hr class="dropdown-divider" disabled></li>
+            <li><a class="dropdown-item sortOption" onclick="resultHistory('NumberDesc')">Number Desc</a></li>
+            <li><hr class="dropdown-divider" disabled></li>
+            <li><a class="dropdown-item sortOption" onclick="resultHistory('DateAsc')">Date Asc</a></li>
+            <li><hr class="dropdown-divider" disabled></li>
+            <li><a class="dropdown-item sortOption" onclick="resultHistory('DateDesc')">Date Desc</a></li>
+        </ul>
+    </div>
+
+
+    <div id="resultsDisplay" class="d-flex flex-column w-95 align-items-start mt-3 ms-5">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+    <script src="Fibonacci.js"></script>
+</body>
+
+</html>
